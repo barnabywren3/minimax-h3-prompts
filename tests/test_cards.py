@@ -65,3 +65,42 @@ def test_readme_is_in_sync_with_the_library():
     cards = readme.split("<!-- cards:start -->\n")[1].split("\n<!-- cards:end -->")[0]
     assert index == run_prompt.readme_index(LIB)
     assert cards == run_prompt.readme_cards(LIB).strip()
+
+
+def test_running_a_card_uploads_submits_polls_and_saves(tmp_path, monkeypatch):
+    import io
+    import json as _json
+
+    seen = []
+
+    class Reply(io.BytesIO):
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            self.close()
+
+    def urlopen(req, timeout=None):
+        seen.append(req)
+        url = req.full_url
+        if url.endswith("/media/uploads"):
+            return Reply(b'{"upload_url": "https://put.test/1", "media_url": "https://cdn.test/me.png"}')
+        if url == "https://put.test/1":
+            return Reply(b"")
+        if url.endswith("/videos/generations"):
+            return Reply(b'{"request_id": "r1"}')
+        if url.endswith("/content"):
+            return Reply(b"MP4")
+        return Reply(_json.dumps({"status": "done", "usage": {"billed_seconds": 5}}).encode())
+
+    monkeypatch.setenv("MINIMAX_H3_API_KEY", "k")
+    monkeypatch.setattr(run_prompt.urllib.request, "urlopen", urlopen)
+    image = tmp_path / "me.png"
+    image.write_bytes(b"png")
+    out = tmp_path / "turntable.mp4"
+    assert run_prompt.main(["run", "product-02", "--image", str(image), "--out", str(out)]) == 0
+    assert out.read_bytes() == b"MP4"
+    submit = _json.loads(seen[2].data)
+    assert submit["reference_images"] == [{"url": "https://cdn.test/me.png"}] and submit["aspect_ratio"] == "1:1"
+    assert {r.get_header("User-agent") for r in seen} == {"minimax-h3-prompts/1.0"}
+    assert seen[1].get_header("Authorization") is None

@@ -25,6 +25,7 @@ LIBRARY = os.path.join(HERE, "prompts.json")
 MIME = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".mp4": "video/mp4",
         ".mov": "video/quicktime", ".mp3": "audio/mpeg", ".wav": "audio/wav"}
 FIELD = {"image": "reference_images", "video": "reference_videos", "audio": "reference_audios"}
+USER_AGENT = "minimax-h3-prompts/1.0"  # sent on every request, including upload PUTs
 
 
 def library():
@@ -88,6 +89,7 @@ def build(card, images=(), videos=(), audios=(), first=None, last=None, resoluti
 def call(method, url, payload=None, raw=False, auth=True, ctype=None):
     req = urllib.request.Request(url, method=method,
                                  data=payload if isinstance(payload, bytes) or payload is None else json.dumps(payload).encode())
+    req.add_header("User-Agent", USER_AGENT)
     if auth:
         req.add_header("Authorization", "Bearer " + os.environ["MINIMAX_H3_API_KEY"])
     if ctype or (payload is not None and not isinstance(payload, bytes)):
