@@ -1,0 +1,513 @@
+{
+  "model": "minimax-h3",
+  "checked": "2026-10-07",
+  "usd_per_second": {
+    "768p": 0.039,
+    "2k": 0.064
+  },
+  "cards": [
+    {
+      "id": "product-01",
+      "category": "Product & ads",
+      "title": "Perfume in falling petals",
+      "mode": "text",
+      "duration": 6,
+      "resolution": "2k",
+      "aspect_ratio": "9:16",
+      "prompt": "Slow-motion macro of a faceted glass perfume bottle on black velvet while pale pink petals fall around it. One petal slides down the glass. The camera arcs a quarter turn to catch a rim of gold light on the cap. Hushed room tone, a single soft chime as the petal lands.",
+      "notes": "Text mode invents the bottle. For your own bottle, use product-02's reference setup."
+    },
+    {
+      "id": "product-02",
+      "category": "Product & ads",
+      "title": "Your product on a turntable",
+      "mode": "reference",
+      "duration": 5,
+      "resolution": "768p",
+      "aspect_ratio": "1:1",
+      "references": [
+        {
+          "kind": "image",
+          "role": "clean front shot of the product"
+        }
+      ],
+      "prompt": "@Image 1 rotates slowly on a white marble turntable under soft studio light, a thin reflection on the surface. The label stays sharp and readable through the full turn. Faint motor hum, no music.",
+      "notes": "Say what must not change (label, color). A plain background in the reference image keeps the focus on the product."
+    },
+    {
+      "id": "product-03",
+      "category": "Product & ads",
+      "title": "Sneaker unboxing, handheld",
+      "mode": "text",
+      "duration": 8,
+      "resolution": "768p",
+      "aspect_ratio": "9:16",
+      "prompt": "Handheld phone-style shot: two hands lift the lid of an orange shoebox on a bedroom floor, push back tissue paper and pull out a white running shoe, turning it toward the camera. Tissue rustle, a delighted \"Finally!\" off camera. Daylight from a window.",
+      "notes": "Naming the camera style (handheld, phone) steers it toward a user-generated look."
+    },
+    {
+      "id": "product-04",
+      "category": "Product & ads",
+      "title": "Skincare texture close-up",
+      "mode": "text",
+      "duration": 5,
+      "resolution": "2k",
+      "aspect_ratio": "3:4",
+      "prompt": "Extreme close-up: a fingertip swirls a dollop of pearly cream on frosted glass, the texture folding into soft peaks. Raking side light shows the shimmer. Quiet, a soft squish.",
+      "notes": "4:5 is not an H3 ratio; 3:4 is the nearest portrait option."
+    },
+    {
+      "id": "product-05",
+      "category": "Product & ads",
+      "title": "Watch reveal from shadow",
+      "mode": "text",
+      "duration": 6,
+      "resolution": "2k",
+      "aspect_ratio": "16:9",
+      "prompt": "Darkness, then a thin line of light sweeps across a steel wristwatch on a slate slab, revealing the dial and the second hand ticking. The camera pushes in until the bezel fills the frame. Every tick is audible, then a low synth swell.",
+      "notes": "A light sweep reveals detail without a fast camera move."
+    },
+    {
+      "id": "dialogue-01",
+      "category": "Dialogue & talking heads",
+      "title": "Street interview",
+      "mode": "text",
+      "duration": 8,
+      "resolution": "768p",
+      "aspect_ratio": "9:16",
+      "prompt": "Vox-pop on a busy sidewalk: a young man in a denim jacket looks into a handheld microphone and says \"Honestly? I'd take the train every day if it ran on time.\" Passers-by blur behind him, traffic noise, the interviewer laughs.",
+      "notes": "Put the exact line in quotes and give the speaker a clear look; the soundtrack is generated with the picture."
+    },
+    {
+      "id": "dialogue-02",
+      "category": "Dialogue & talking heads",
+      "title": "Two people, one kitchen argument",
+      "mode": "text",
+      "duration": 10,
+      "resolution": "768p",
+      "aspect_ratio": "16:9",
+      "prompt": "Medium two-shot in a narrow kitchen at night. A woman sets down a mug hard and says \"You said you'd call.\" The man by the fridge answers quietly, \"I know. I'm sorry.\" Fridge hum, a clock ticking, warm pendant light, the camera drifts slowly between them.",
+      "notes": "Attribute each line to a described person and keep the exchange to two lines in 10 s."
+    },
+    {
+      "id": "dialogue-03",
+      "category": "Dialogue & talking heads",
+      "title": "Studio news anchor",
+      "mode": "text",
+      "duration": 7,
+      "resolution": "2k",
+      "aspect_ratio": "16:9",
+      "prompt": "A news anchor in a navy suit at a glass desk looks into the lens and says \"Good evening. Tonight: the city votes on a four-day school week.\" Blue studio lighting, a monitor wall behind her, a short news sting at the start.",
+      "notes": "Keep on-screen text out of the prompt and add it in editing."
+    },
+    {
+      "id": "dialogue-04",
+      "category": "Dialogue & talking heads",
+      "title": "Your presenter, new script",
+      "mode": "reference",
+      "duration": 10,
+      "resolution": "768p",
+      "aspect_ratio": "9:16",
+      "references": [
+        {
+          "kind": "image",
+          "role": "the presenter, chest-up, facing camera"
+        }
+      ],
+      "prompt": "@Image 1 sits at a tidy desk with a laptop and says to camera \"Three things I wish I knew before my first marathon.\" She counts on her fingers as she talks. Soft key light, plants behind her, a quiet room.",
+      "notes": "Use a single clear face rather than a group photo."
+    },
+    {
+      "id": "dialogue-05",
+      "category": "Dialogue & talking heads",
+      "title": "Multilingual greeting",
+      "mode": "text",
+      "duration": 6,
+      "resolution": "768p",
+      "aspect_ratio": "1:1",
+      "prompt": "A smiling hotel receptionist behind a wooden counter greets the camera: \"Bienvenue, welcome, willkommen.\" She slides a key card forward. Lobby murmur, soft piano in the distance.",
+      "notes": "Short mixed-language lines are a quick way to hear how the voice handles each language before you commit to a script."
+    },
+    {
+      "id": "cinematic-01",
+      "category": "Cinematic & nature",
+      "title": "Storm over a wheat field",
+      "mode": "text",
+      "duration": 10,
+      "resolution": "2k",
+      "aspect_ratio": "21:9",
+      "prompt": "Ultra-wide shot: a black thunderstorm rolls over a golden wheat field at sunset, lightning forks on the horizon, the wheat bends in waves toward the camera. Slow dolly forward. Rolling thunder, wind hiss.",
+      "notes": "21:9 with a slow dolly suits wide landscapes."
+    },
+    {
+      "id": "cinematic-02",
+      "category": "Cinematic & nature",
+      "title": "Whale breach at dawn",
+      "mode": "text",
+      "duration": 6,
+      "resolution": "2k",
+      "aspect_ratio": "16:9",
+      "prompt": "From a small boat at dawn, a humpback whale breaches close by, water sheeting off its fins, then crashes back in a burst of spray that hits the lens. Gulls, the boat engine idling, people gasping.",
+      "notes": "Ending on spray on the lens gives a natural cut point."
+    },
+    {
+      "id": "cinematic-03",
+      "category": "Cinematic & nature",
+      "title": "Desert caravan at dusk",
+      "mode": "text",
+      "duration": 12,
+      "resolution": "768p",
+      "aspect_ratio": "21:9",
+      "prompt": "A camel caravan crosses a dune ridge in silhouette against an orange sky, long shadows stretching down the sand. The camera tracks sideways at the same pace. Soft bells, wind, a distant voice calling.",
+      "notes": "For a 12-second take, keep one continuous motion: here a matched sideways track."
+    },
+    {
+      "id": "cinematic-04",
+      "category": "Cinematic & nature",
+      "title": "Rain on a city window",
+      "mode": "text",
+      "duration": 8,
+      "resolution": "768p",
+      "aspect_ratio": "9:16",
+      "prompt": "Close-up of raindrops racing down a window at night, the city lights behind them turning into bokeh circles. Focus pulls from the drops to a tram passing below. Rain patter, muffled traffic.",
+      "notes": "A focus pull gives a vertical frame movement without a cramped pan."
+    },
+    {
+      "id": "cinematic-05",
+      "category": "Cinematic & nature",
+      "title": "Northern lights over a cabin",
+      "mode": "text",
+      "duration": 10,
+      "resolution": "2k",
+      "aspect_ratio": "16:9",
+      "prompt": "A small red cabin in snow under a sky of green and violet aurora that ripples and folds. Smoke curls from the chimney; the camera tilts up slowly from the cabin to the sky. Deep silence, snow creaking.",
+      "notes": "Name the aurora's colors instead of leaving them to chance."
+    },
+    {
+      "id": "action-01",
+      "category": "Action & sports",
+      "title": "Rooftop parkour",
+      "mode": "text",
+      "duration": 7,
+      "resolution": "768p",
+      "aspect_ratio": "16:9",
+      "prompt": "A runner in a grey hoodie sprints across a rooftop, vaults a vent, leaps the gap to the next building and rolls on landing. The camera follows on a drone, dropping as she jumps. Wind rush, footsteps, a thud on landing.",
+      "notes": "Keep it to one stunt chain per shot."
+    },
+    {
+      "id": "action-02",
+      "category": "Action & sports",
+      "title": "Kickflip in slow motion",
+      "mode": "text",
+      "duration": 5,
+      "resolution": "2k",
+      "aspect_ratio": "9:16",
+      "prompt": "Low angle at board level: a skater pops a kickflip over a crack in the pavement, the board spinning beneath him in slow motion before both feet catch it. Wheels clack, the crowd off camera cheers.",
+      "notes": "A low angle exaggerates the height of the trick."
+    },
+    {
+      "id": "action-03",
+      "category": "Action & sports",
+      "title": "Boxing pads, sweat and light",
+      "mode": "text",
+      "duration": 6,
+      "resolution": "768p",
+      "aspect_ratio": "4:3",
+      "prompt": "A boxer throws a fast one-two into her coach's pads in a dim gym; sweat flies off in a shaft of window light. Handheld close shot, the coach calling \"Again!\" Leather smacks, breathing.",
+      "notes": "4:3 crops tightly around two people sparring."
+    },
+    {
+      "id": "action-04",
+      "category": "Action & sports",
+      "title": "Sprint start",
+      "mode": "text",
+      "duration": 4,
+      "resolution": "768p",
+      "aspect_ratio": "16:9",
+      "prompt": "Ground-level shot of a sprinter in the blocks; the starter's pistol cracks and she explodes forward past the camera, spikes kicking up rubber crumbs. Stadium roar.",
+      "notes": "The 4-second minimum suits a single explosive beat."
+    },
+    {
+      "id": "character-01",
+      "category": "Reference: characters & products",
+      "title": "Same character, new place",
+      "mode": "reference",
+      "duration": 8,
+      "resolution": "768p",
+      "aspect_ratio": "16:9",
+      "references": [
+        {
+          "kind": "image",
+          "role": "the character, full body, plain background"
+        }
+      ],
+      "prompt": "@Image 1 walks through a crowded night market, stops at a noodle stall and orders with a smile. The camera follows at shoulder height. Sizzling woks, chatter, lantern light.",
+      "notes": "Reuse the exact same image in every clip where this character appears."
+    },
+    {
+      "id": "character-02",
+      "category": "Reference: characters & products",
+      "title": "Two characters meet",
+      "mode": "reference",
+      "duration": 8,
+      "resolution": "768p",
+      "aspect_ratio": "16:9",
+      "references": [
+        {
+          "kind": "image",
+          "role": "first character"
+        },
+        {
+          "kind": "image",
+          "role": "second character"
+        }
+      ],
+      "prompt": "@Image 1 waits on a train platform; @Image 2 steps off the arriving train and they hug. The camera circles them slowly. Train brakes, an announcement echoing.",
+      "notes": "Give each character a distinct action so the prompt keeps them apart."
+    },
+    {
+      "id": "character-03",
+      "category": "Reference: characters & products",
+      "title": "Outfit from a second image",
+      "mode": "reference",
+      "duration": 6,
+      "resolution": "768p",
+      "aspect_ratio": "9:16",
+      "references": [
+        {
+          "kind": "image",
+          "role": "the person"
+        },
+        {
+          "kind": "image",
+          "role": "the jacket on a hanger"
+        }
+      ],
+      "prompt": "@Image 1 wears the jacket from @Image 2 and does a slow turn in front of a mirror in a bright fitting room, then smooths the lapel. Hangers clink, soft store music.",
+      "notes": "State which image supplies the person and which supplies the garment."
+    },
+    {
+      "id": "character-04",
+      "category": "Reference: characters & products",
+      "title": "Product in a real setting",
+      "mode": "reference",
+      "duration": 6,
+      "resolution": "2k",
+      "aspect_ratio": "16:9",
+      "references": [
+        {
+          "kind": "image",
+          "role": "the product (a backpack)"
+        },
+        {
+          "kind": "image",
+          "role": "the location photo"
+        }
+      ],
+      "prompt": "A hiker sets @Image 1 down on the rocky summit shown in @Image 2, unzips the front pocket and pulls out a map as the wind tugs at it. Golden hour, wide lens. Wind, zipper, distant birds.",
+      "notes": "A location photo as a second reference shows the scene instead of describing it."
+    },
+    {
+      "id": "motion-01",
+      "category": "Reference: motion & sound",
+      "title": "Copy a dance",
+      "mode": "reference",
+      "duration": 8,
+      "resolution": "768p",
+      "aspect_ratio": "9:16",
+      "references": [
+        {
+          "kind": "image",
+          "role": "the dancer"
+        },
+        {
+          "kind": "video",
+          "role": "choreography clip",
+          "seconds": 6
+        }
+      ],
+      "prompt": "@Image 1 performs the choreography of @Video 1 on a sunny basketball court, matching its timing. Fixed wide shot, sneakers squeaking.",
+      "notes": "The reference clip's 6 s are billed on top of the 8 s output."
+    },
+    {
+      "id": "motion-02",
+      "category": "Reference: motion & sound",
+      "title": "Borrow a camera move",
+      "mode": "reference",
+      "duration": 6,
+      "resolution": "768p",
+      "aspect_ratio": "16:9",
+      "references": [
+        {
+          "kind": "video",
+          "role": "a clip with the camera move you want",
+          "seconds": 4
+        }
+      ],
+      "prompt": "Recreate the camera move of @Video 1 through a misty pine forest at dawn: the same speed, the same rise and turn. Birdsong, dripping water.",
+      "notes": "Keep the reference clip short (2-4 s): its seconds are billed like output."
+    },
+    {
+      "id": "motion-03",
+      "category": "Reference: motion & sound",
+      "title": "Lip-sync to your voice",
+      "mode": "reference",
+      "duration": 8,
+      "resolution": "768p",
+      "aspect_ratio": "9:16",
+      "references": [
+        {
+          "kind": "image",
+          "role": "the speaker, facing camera"
+        },
+        {
+          "kind": "audio",
+          "role": "the voice line, 6-8 s"
+        }
+      ],
+      "prompt": "@Image 1 speaks the words of @Audio 1 directly to camera in a quiet home office, natural head movement and blinks, soft daylight.",
+      "notes": "Audio references are free, but H3 needs an image or video beside them."
+    },
+    {
+      "id": "motion-04",
+      "category": "Reference: motion & sound",
+      "title": "Cut to the beat",
+      "mode": "reference",
+      "duration": 10,
+      "resolution": "768p",
+      "aspect_ratio": "9:16",
+      "references": [
+        {
+          "kind": "image",
+          "role": "location 1"
+        },
+        {
+          "kind": "image",
+          "role": "location 2"
+        },
+        {
+          "kind": "image",
+          "role": "location 3"
+        },
+        {
+          "kind": "audio",
+          "role": "the track, 10 s"
+        }
+      ],
+      "prompt": "A fast travel montage that jumps between @Image 1, @Image 2 and @Image 3 on every kick drum of @Audio 1, whip pans between places, bright summer light.",
+      "notes": "Up to 9 images fit in one request; each extra place is one more cut to fit in 10 s."
+    },
+    {
+      "id": "frames-01",
+      "category": "First frame & first+last frame",
+      "title": "Bring a painting to life",
+      "mode": "first_frame",
+      "duration": 6,
+      "resolution": "768p",
+      "frames": [
+        "a landscape painting"
+      ],
+      "prompt": "The painted clouds start to drift, the river ripples and a flock of birds crosses the sky while the brushstroke texture stays visible. Gentle wind, water.",
+      "notes": "Ask for the medium to stay visible (brushstrokes) or it may turn photographic."
+    },
+    {
+      "id": "frames-02",
+      "category": "First frame & first+last frame",
+      "title": "Old family photo, gently animated",
+      "mode": "first_frame",
+      "duration": 5,
+      "resolution": "768p",
+      "frames": [
+        "a scanned family portrait"
+      ],
+      "prompt": "The people in the photo blink and smile softly, the child turns her head toward her mother, a breeze moves the curtain. Subtle motion only, keep the film grain.",
+      "notes": "Ask for subtle motion; large movements risk distorting the faces."
+    },
+    {
+      "id": "frames-03",
+      "category": "First frame & first+last frame",
+      "title": "Day to night, same skyline",
+      "mode": "first_last_frame",
+      "duration": 8,
+      "resolution": "2k",
+      "frames": [
+        "the skyline by day",
+        "the same skyline at night"
+      ],
+      "prompt": "Time passes over the skyline: the sun sets, clouds race, windows light up floor by floor until the night view. Locked-off camera. City hum fades to night sounds.",
+      "notes": "Shoot or render both frames from the identical viewpoint."
+    },
+    {
+      "id": "frames-04",
+      "category": "First frame & first+last frame",
+      "title": "Sketch becomes the render",
+      "mode": "first_last_frame",
+      "duration": 6,
+      "resolution": "768p",
+      "frames": [
+        "a pencil sketch of a chair",
+        "the finished 3D render of the chair"
+      ],
+      "prompt": "Pencil lines thicken, fill with wood grain and fabric, and the chair turns slightly as it becomes the finished render. Pencil scratching that fades to quiet.",
+      "notes": "Describe the change between the two pictures, not the pictures themselves."
+    },
+    {
+      "id": "frames-05",
+      "category": "First frame & first+last frame",
+      "title": "Logo reveal between two frames",
+      "mode": "first_last_frame",
+      "duration": 4,
+      "resolution": "2k",
+      "frames": [
+        "a dark frame with scattered gold particles",
+        "the logo on a dark background"
+      ],
+      "prompt": "The gold particles swirl inward and lock together into the logo with a soft flash. A rising whoosh and a single bass hit.",
+      "notes": "The last frame pins the logo, so the clip ends on it."
+    },
+    {
+      "id": "stylized-01",
+      "category": "Stylized & animation",
+      "title": "Claymation breakfast",
+      "mode": "text",
+      "duration": 6,
+      "resolution": "768p",
+      "aspect_ratio": "4:3",
+      "prompt": "Stop-motion claymation: a clay egg cracks itself onto a clay frying pan, the yolk wobbles, a little clay toast pops out of a toaster. Visible thumbprints, slightly choppy frame rate, cheerful ukulele.",
+      "notes": "Name the material details (thumbprints, choppy motion) that sell stop-motion."
+    },
+    {
+      "id": "stylized-02",
+      "category": "Stylized & animation",
+      "title": "Paper cut-out forest",
+      "mode": "text",
+      "duration": 8,
+      "resolution": "768p",
+      "aspect_ratio": "16:9",
+      "prompt": "Layered paper cut-out animation: a paper fox runs through a forest of folded paper trees, layers sliding at different speeds as the camera trucks right. Paper rustle, soft flute melody.",
+      "notes": "Parallax between paper layers gives depth without a 3D look."
+    },
+    {
+      "id": "stylized-03",
+      "category": "Stylized & animation",
+      "title": "Anime rooftop duel",
+      "mode": "text",
+      "duration": 8,
+      "resolution": "2k",
+      "aspect_ratio": "16:9",
+      "prompt": "Anime style: two swordswomen clash on a rooftop under a red moon, sparks and speed lines on each strike, cherry petals whipping past. Dramatic low angle, a beat of silence before the final strike, then a metallic ring.",
+      "notes": "A beat of silence before the hit gives the sound design room."
+    },
+    {
+      "id": "stylized-04",
+      "category": "Stylized & animation",
+      "title": "3D toy commercial",
+      "mode": "text",
+      "duration": 6,
+      "resolution": "768p",
+      "aspect_ratio": "1:1",
+      "prompt": "Glossy 3D animation: a small yellow robot toy wakes up on a kid's desk, stretches, and waves at the camera before jumping into a pencil cup. Bright playful lighting, boing sound, kids laughing.",
+      "notes": "Draft at 768p; save 2K for the version you ship."
+    }
+  ]
+}
